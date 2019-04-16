@@ -10,6 +10,8 @@ jobs:
       - image: circleci/php:7.1-node-browsers
         environment:
           DB_CONNECTION: sqlite
+          APP_DEBUG: true
+          APP_KEY: base64:2pmccrYgHdCeS+RcNkjSL84HuGL7BqVSDD7Gai4+zY8=
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
