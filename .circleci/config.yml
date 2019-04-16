@@ -8,6 +8,8 @@ jobs:
     docker:
       # Specify the version you desire here
       - image: circleci/php:7.1-node-browsers
+        environment:
+          DB_CONNECTION: sqlite
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -49,6 +51,7 @@ jobs:
             - node_modules
 
       # prepare the database
+      - run: touch database/database.sqlite
       - run: php artisan migrate --force
 
       # run tests with phpunit or codecept
